@@ -9,9 +9,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        number = savedInstanceState?.getInt("NUMBER") ?: 0
         textView.text = "$number"
         buttonAdd.setOnClickListener { textView.text = "${++number}" }
         buttonSub.setOnClickListener { textView.text = "${--number}" }
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("NUMBER", number)
     }
 }
