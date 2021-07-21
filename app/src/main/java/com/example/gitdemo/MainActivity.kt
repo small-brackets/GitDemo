@@ -11,5 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         textView.text = "$number"
         buttonAdd.setOnClickListener { textView.text = "${++number}" }
+        buttonSub.setOnClickListener { textView.text = "${--number}" }
+
     }
 }
